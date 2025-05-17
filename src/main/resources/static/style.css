@@ -1,0 +1,44 @@
+body {
+    background-color: #e5f6df;
+    font-family: 'Segoe UI', sans-serif;
+    padding-bottom: 50px;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2b5d34;
+}
+
+.reptile-border {
+    border: 2px solid #3a7222;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-jungle {
+    background-color: #3a7222;
+    color: white;
+    border: none;
+}
+
+.btn-jungle:hover {
+    background-color: #2b5d34;
+}
+
+.reptile-card {
+    border: 1px solid #b5e3c0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #a3d9a5;
+}

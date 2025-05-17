@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Reptilien-Explorer 🦎</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #e5f6df;
+      font-family: 'Segoe UI', sans-serif;
+      padding-bottom: 50px;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #2b5d34;
+      text-align: center;
+    }
+    .reptile-border {
+      border: 2px solid #3a7222;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+    .btn-jungle {
+      background-color: #3a7222;
+      color: white;
+      border: none;
+    }
+    .btn-jungle:hover {
+      background-color: #2b5d34;
+    }
+    .reptile-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #a3d9a5;
+    }
+    .reptile-card h5 {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #2b5d34;
+    }
+    .carousel-item iframe {
+      width: 100%;
+      height: 300px;
+    }
+
+    @media (max-width: 576px) {
+      .reptile-border {
+        padding: 15px;
+      }
+      .gallery .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .carousel-item iframe {
+        height: 220px;
+      }
+    }
+  </style>
+  <!-- ✅ Script JS -->
+  <script src="/script.js" defer></script>
+</head>
+<body>
+
+  <div class="container mt-4">
+    <h1>🦎 Reptilien-Explorer</h1>
+    <p class="text-center">Lade ein Bild hoch, entdecke das Reptil und teste dein Wissen!</p>
+
+    <!-- Upload -->
+    <div class="reptile-border">
+      <h4>📸 Lade ein Bild eines Reptils hoch:</h4>
+      <input type="file" accept="image/png, image/jpeg" class="form-control-file" id="image" name="image"
+             onchange="checkFiles(this.files);">
+      <div id="answerPart" class="mt-3" style="visibility: hidden;">
+        <p><b>Vorhersage:</b> <span id="answer"></span></p>
+        <p><b>Analysiertes Bild:</b></p>
+        <img id="preview" width="100%" src="#" alt="Vorschau" class="img-thumbnail" />
+      </div>
+    </div>
+
+    <!-- Quiz -->
+    <div class="reptile-border">
+      <h2>🎮 Reptilien-Quiz</h2>
+      <p id="quizQuestion"><strong>Frage:</strong> Wird geladen...</p>
+      <div id="quizOptions" class="btn-group-vertical w-100" role="group"></div>
+      <p class="mt-2" id="quizResult"></p>
+      <button class="btn btn-jungle mt-3" onclick="loadNextQuestion()">Nächste Frage</button>
+    </div>
+
+    <!-- Galerie -->
+    <div class="reptile-border">
+      <h2>📚 Reptilien-Galerie 
+        <button onclick="loadRandomImages()" class="btn btn-sm btn-outline-success ml-3">🔄 Neue Bilder laden</button>
+      </h2>
+      <div id="gallery" class="row gallery"></div>
+    </div>
+
+    <!-- ReptilDex -->
+    <div class="reptile-border">
+      <h2>🧬 Dein ReptilDex</h2>
+      <p>Alle Reptilien, die du erkannt hast:</p>
+      <ul id="reptileDex" class="list-group">
+        <li class="list-group-item">🦎 Noch keine Reptilien erkannt...</li>
+      </ul>
+    </div>
+
+    <!-- Carrousel de vidéos -->
+    <div class="reptile-border">
+      <h2>🎥 Reptilien-Videos von Merk's Exotics</h2>
+      <div id="videoCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <iframe src="https://www.youtube.com/embed/JvnBuoIioCU" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe src="https://www.youtube.com/embed/Dcc-nB9tSq4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="carousel-item">
+            <iframe src="https://www.youtube.com/embed/IdUMy3NZg5s" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Suivant</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

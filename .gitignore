@@ -1,0 +1,55 @@
+# === IDEs & Editors ===
+.idea/
+.vscode/
+*.iml
+
+# === Build & Compiled Files ===
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# === Maven ===
+.mvn/
+dependency-reduced-pom.xml
+release.properties
+/test-output/
+jacoco.exec
+
+# === OS/system Files ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === Project-specific ===
+structure_projet.txt
+project_file_list.txt
+Reptile-Classifier/         # ancien dossier copié par erreur
+
+# === Resources ===
+# Ignore trained model weights but keep the folder
+src/main/resources/models/*
+!src/main/resources/models/.gitkeep
+
+# Ignore local image dataset
+src/main/resources/dataset/
+!src/main/resources/dataset/README.md
+
+# Keep frontend assets (HTML, CSS, JS)
+# DO NOT ignore /static/
+
+# === Secrets & Configs ===
+.env
+*.env
+*.key
+*.pem
+*.crt

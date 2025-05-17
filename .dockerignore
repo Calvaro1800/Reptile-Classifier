@@ -1,0 +1,25 @@
+# Répertoires à ignorer
+/target
+/.git
+/.idea
+/dataset
+/ut-zap50k-images-square
+
+# Fichiers lourds ou inutiles
+dataset/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.zip
+*.tar.gz
+*.log
+*.bak
+
+# MacOS / IntelliJ / VS Code metadata
+.DS_Store
+*.iml
+.vscode/
+*.zip
+*.tar.gz
+*.pack

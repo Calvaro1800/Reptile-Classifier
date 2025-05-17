@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  backend:
+    build: .
+    container_name: reptilien-backend
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      - DJL_ENGINE=PyTorch
